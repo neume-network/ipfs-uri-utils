@@ -10,7 +10,7 @@ npm install ipfs-uri-utils
 
 ## Usage
 
-### `function breakdownIpfs(ipfsUri: string): { cid: string; path: string; }`
+#### `function breakdownIpfs(ipfsUri: string): { cid: string; path: string; }`
 Breakdown given IPFS URI into CID and path. IPFS URI can be a [native IPFS URI](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#native-urls), [subdomain URI](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#subdomain-gateway) or [path gateway URI](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#path-gateway).
 
 ```js
@@ -23,7 +23,7 @@ breakdownIpfs("ipfs://bafybeihehacot7c5dj7y5qhwgaj7q6gdxfrjfmxcltl6wmtrjxzcn6cs7
 // => {cid: bafybeihehacot7c5dj7y5qhwgaj7q6gdxfrjfmxcltl6wmtrjxzcn6cs7e, path: "/path/to/"}
 ```
 
-### `function anyIpfsToNativeIpfs(ipfsUri: string): string`
+#### `function anyIpfsToNativeIpfs(ipfsUri: string): string`
 
 Given any IPFS URI convert it into native IPFS URI. IPFS URI can be of type subdomain or path gateway.
 
@@ -39,7 +39,7 @@ anyIpfsToNativeIpfs("https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3e
 // => ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html/#1850
 ```
 
-### `function ifIpfsConvertToNativeIpfs(uri: string): string`
+#### `function ifIpfsConvertToNativeIpfs(uri: string): string`
 
 If given URI is a valid IPFS URI, try convert it into native IPFS URI.
 
