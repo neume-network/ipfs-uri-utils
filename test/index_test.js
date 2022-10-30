@@ -104,7 +104,7 @@ function ipfsTest(t, ipfsUri, breakdown, nativeUriString) {
 
 test("anyIpfsToNativeIpfs should throw error on invalid IPFS URI", (t) => {
   t.throws(() => anyIpfsToNativeIpfs("https://neume-ipfs.network"), {
-    message: "Couldn't convert https://neume-ipfs.network to native IPFS URI",
+    message: "Couldn't breakdown https://neume-ipfs.network to CID and path",
   });
 });
 
