@@ -1,0 +1,27 @@
+{
+  "name": "ipfs-uri-utils",
+  "version": "1.0.0",
+  "description": "Utilities for working with IPFS links",
+  "exports": "./src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "ava"
+  },
+  "files": [
+    "src"
+  ],
+  "types": "./src/index.d.ts",
+  "keywords": [
+    "IPFS",
+    "CID",
+    "hash",
+    "utils",
+    "link",
+    "gateway"
+  ],
+  "author": "il3ven",
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "ava": "^5.0.1"
+  }
+}
