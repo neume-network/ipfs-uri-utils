@@ -1,6 +1,6 @@
 {
   "name": "ipfs-uri-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utilities for working with IPFS links",
   "exports": "./src/index.js",
   "type": "module",
