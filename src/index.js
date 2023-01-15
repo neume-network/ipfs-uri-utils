@@ -1,8 +1,8 @@
 export function breakdownIpfs(ipfsUri) {
   // Modified from is-ipfs package at https://github.com/ipfs-shipyard/is-ipfs/blob/393859af921ef52d786c0f14bf772eeda7f8930b/src/index.js#L12
-  const nativeIpfsPattern = /ipfs:\/\/([^/?#]+)(.*)/;
-  const pathGatewayPattern = /^https?:\/\/[^/]+\/ipfs\/([^/?#]+)(.*)/;
-  const subdomainGatewayPattern = /^https?:\/\/([^/]+)\.ipfs\.[^/?#]+(.*)/;
+  const nativeIpfsPattern = /ipfs:\/\/(\w+)([\w#\/?]*)$/;
+  const pathGatewayPattern = /^https?:\/\/[^/]+\/ipfs\/(\w+)([\w#\/?]*)$/;
+  const subdomainGatewayPattern = /^https?:\/\/(\w+)\.ipfs\.[^/?#]+(.*)$/;
 
   if (typeof ipfsUri !== "string")
     throw new Error("Given IPFS URI should be of type string");

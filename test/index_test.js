@@ -102,11 +102,18 @@ function ipfsTest(t, ipfsUri, breakdown, nativeUriString) {
   test(`valid anyIpfsToNativeIpfs - ${args[0]}`, ipfsTest, ...args)
 );
 
-test("anyIpfsToNativeIpfs should throw error on invalid IPFS URI", (t) => {
-  t.throws(() => anyIpfsToNativeIpfs("https://neume-ipfs.network"), {
-    message: "Couldn't breakdown https://neume-ipfs.network to CID and path",
-  });
-});
+[
+  "https://neume-ipfs.network",
+  "https://ipfs.fleek.co/ipfs/\"bafybeigtut2quijmcaxj3d4w473nqnaodizzsl5sjjh5z3wntm7qfh5ci4\"",
+  "https://\'bafybeigtut2quijmcaxj3d4w473nqnaodizzsl5sjjh5z3wntm7qfh5ci4ipfs.ipfs.cf-ipfs.com/",
+  "ipfs://bafybeigtut2quijmcaxj3d4w473nqnaodizzsl5sjjh5z3wntm7qfh5ci4ipfs:/path"
+].forEach((arg) =>
+  test(`anyIpfsToNativeIpfs should throw error on invalid IPFS URI - ${arg}`, (t) => {
+    t.throws(() => anyIpfsToNativeIpfs(arg), {
+      message: `Couldn't breakdown ${arg} to CID and path`,
+    });
+  })
+)
 
 test("anyIpfsToNativeIpfs should throw error on non string URI", (t) => {
   t.throws(() => anyIpfsToNativeIpfs(undefined), {
